@@ -1,0 +1,28 @@
+Common mistakes when working with pointers
+Suppose, we want a pointer varPoint to point to the address of var. Then,
+
+int var, *varPoint;
+
+// Wrong! 
+// varPoint is an address but var is not
+varPoint = var;
+
+// Wrong!
+// &var is an address
+// *varPoint is the value stored in &var
+*varPoint = &var;
+
+// Correct! 
+// varPoint is an address and so is &var
+varPoint = &var;
+
+ // Correct!
+// both *varPoint and var are values
+*varPoint = var;
+
+
+In most contexts, array names decay to pointers. In simple words, array names are converted to pointers. That's the reason why we can use pointers to access elements of arrays.
+
+However, we should remember that pointers and arrays are not the same.
+
+There are a few cases where array names don't decay to pointers. 
